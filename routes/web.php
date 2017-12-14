@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('foo', function () {
+    return 'Hello World';
+});
+
+//Route::get('/user', 'UserController@index');
+
+Route::match(['get', 'post'], '/user',  'UserController@index');
